@@ -32,7 +32,6 @@ var App = (function(app) {
       url: 'https://filter-api.herokuapp.com/posts'
     }).done(function(response){
       var createdAtReverse = response.reverse();
-      debugger;
       console.log(createdAtReverse);
       for (var i = 0; i < createdAtReverse.length; i++) {
         var reverseOrder = createdAtReverse[i]
