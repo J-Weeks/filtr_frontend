@@ -53,8 +53,8 @@ var App = (function(app) {
   var checkVote = function($img, voteCount, postId) {
     var voteLength = voteCount.votes.length;
     // $img.closest('div').append(voteLength);
-    $(".vote").empty();
-    $(".vote").append(voteCount.votecount);
+    // $(".vote").empty();
+    // $(".vote").append(voteCount.votecount);
     $.ajax({
       // /posts/:post_id/images/:id/upvote(.:format
       url: 'https://filter-api.herokuapp.com/posts/' + postId + '/images/' + $img.alt + '/upvote',
