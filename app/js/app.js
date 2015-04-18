@@ -29,7 +29,7 @@ var App = (function(app) {
     trace('hello from home');
     $('#container').empty();
     $.ajax({
-      url: 'https://filter-api.herokuapp.com/posts'
+      url: 'http://thawing-badlands-6637.herokuapp.com/posts'
     }).done(function(response){
       var createdAtReverse = response.reverse();
       console.log(createdAtReverse);
@@ -57,7 +57,7 @@ var App = (function(app) {
     // $(".vote").append(voteCount.votecount);
     $.ajax({
       // /posts/:post_id/images/:id/upvote(.:format
-      url: 'https://filter-api.herokuapp.com/posts/' + postId + '/images/' + $img.alt + '/upvote',
+      url: 'https://thawing-badlands-6637.herokuapp.com/posts/' + postId + '/images/' + $img.alt + '/upvote',
         type: 'PATCH',
       data: {
         vote: {count : voteLength }
@@ -76,7 +76,7 @@ var App = (function(app) {
 
     $.ajax({
       // POST /posts/:post_id/images/:id/vote(.:format
-      url: 'https://filter-api.herokuapp.com/posts/' + postId + '/images/' + imgId,
+      url: 'https://thawing-badlands-6637.herokuapp.com/posts/' + postId + '/images/' + imgId,
       type: 'GET'
     }).done(function(data){
       checkVote($img, data, postId);
@@ -117,7 +117,7 @@ var App = (function(app) {
     // $('#container').empty();
     var id = localStorage.getItem('id') || postId ;
     $.ajax({
-      url: 'https://filter-api.herokuapp.com/posts/' + id,
+      url: 'https://thawing-badlands-6637.herokuapp.com/posts/' + id,
       type: 'GET'
     }).done(showPostSuccess)
     .fail(function(){
@@ -133,7 +133,7 @@ var App = (function(app) {
     var postId = $('.show-post').data("post-id");
     event.preventDefault();
     $.ajax({
-      url: 'https://filter-api.herokuapp.com/posts/' + postId + '/comments',
+      url: 'https://thawing-badlands-6637.herokuapp.com/posts/' + postId + '/comments',
       type: 'POST',
       data: {comment: {
         user: $('input#comment-user').val(),
@@ -153,7 +153,7 @@ var App = (function(app) {
     var parentId = $('.comment').data("comment-id");
     event.preventDefault();
     $.ajax({
-      url: 'http://localhost:3000/posts/' + postId + '/comments' + parentId,
+      url: 'http://thawing-badlands-6637.herokuapp.com/posts/' + postId + '/comments' + parentId,
       type: 'POST',
       data: {comment: {
         user: $('input#comment-user').val(),

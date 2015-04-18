@@ -5,7 +5,7 @@ var filtrApp = (function(){
 
   var init = function(){
     authToken = localStorage.getItem('authToken');
-    apiHost = 'https://filter-api.herokuapp.com';
+    apiHost = 'https://thawing-badlands-6637.herokuapp.com';
     setupAjaxRequests();
     $('#signin-form').on('submit', submitLogin);
     $('#signup-form').on('submit', submitRegistration);
